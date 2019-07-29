@@ -53,7 +53,7 @@ export default class NewQuestion extends Component {
                 </div>
 
                 <button onClick={this.handleNewsInput}
-                  type="submit" id="submitButton" className="btn btn-primary"> Create Transfer
+                  type="submit" id="submitButton" className="btn btn-danger"> Create Transfer
                 </button>
 
               </form>
