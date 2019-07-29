@@ -21,7 +21,7 @@ if (workbox) {
 // https://trans-pwa.herokuapp.com/
 
 workbox.routing.registerRoute(
-    /\.(?:js|css|html)$/,
+    /\.(?:js|css|html|png)$/,
     workbox.strategies.networkFirst(),
   )
 
