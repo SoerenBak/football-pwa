@@ -88,7 +88,7 @@ export default class Home extends Component {
                                                                 <p>This site makes it possible to get notifications when a transfer happens.<br></br>The PWA is downloadable.<br></br>It is possible to use the site offline.</p>
                                                             <h2>Notifications</h2> 
                                                                 <p>To get notifications you need to <i>turn on and allow notifications.</i></p>      
-                                                                <a href="/transfers" ><button className="btn btn-primary center-block">Go to Transfers</button></a>
+                                                                <a href="/transfers" ><button className="btn btn-danger center-block">Go to Transfers</button></a>
                                                             
                                                 </div>
                                             </div>
