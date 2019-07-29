@@ -1,9 +1,10 @@
 {
-  "name": "Kindergarten",
-  "short_name": "KG",
-  "theme_color": "#7386d5",
-  "background_color": "#7386d5",
-  "display": "fullscreen",
+  "name": "Football Transfers App",
+  "short_name": "Trans App",
+  "theme_color": "#db0007",
+  "background_color": "#063672",
+  "display": "standalone",
+  "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
   "icons": [

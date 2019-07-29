@@ -190,6 +190,7 @@ app.post("/login", (req, res) => {
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../build/index.html'));
 });
+
 /**** Start server ****/
 const server = app.listen(port,
     () => console.log(`Transfer API running on port ${port}!`));
