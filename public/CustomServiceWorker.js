@@ -36,15 +36,13 @@ workbox.routing.registerRoute('https://trans-pwa.herokuapp.com/transfers',
 
 workbox.routing.registerRoute(
   'https://trans-pwa.herokuapp.com/createTrans',
-   new workbox.strategies.networkFirst({
-  }),
+   new workbox.strategies.networkFirst(),
   'POST'
 )
 
 workbox.routing.registerRoute(
   'https://trans-pwa.herokuapp.com/api/push_message',
-  workbox.strategies.networkFirst({
-  }),
+  workbox.strategies.networkFirst(),
   'POST'
 )
 
