@@ -139,7 +139,7 @@ app.post('/api/push_message', (req, res, next) => {
         }
         sub.forEach((elm) => {
             const payload = JSON.stringify({
-                msg: text,
+                msg: date,
                 text: text
             });
 
