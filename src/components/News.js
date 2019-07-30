@@ -9,6 +9,7 @@ class News extends Component {
         <article>
           <div className="col-lg-12">
             <div className="card">
+              <h4><i className="fas fa-random arrow-trans"></i></h4>
               <h4>{elm.text}</h4>
               <p>{elm.date}</p>
             </div>
@@ -16,7 +17,6 @@ class News extends Component {
           </div>
         </article>
       </React.Fragment>)
-
     });
     return (
       <React.Fragment>

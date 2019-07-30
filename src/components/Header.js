@@ -40,7 +40,7 @@ export default class HeaderInclude extends Component {
               <a href="/"><i className="fas fa-home icon-nav"></i>Home</a>
             </li>
             <li>
-              <a href="/transfers"><i className="fas fa-newspaper icon-nav"></i>Transfers</a>
+              <a href="/transfers"><i className="fas fa-random icon-nav"></i>Transfers</a>
             </li>
           </ul>
 
