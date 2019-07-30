@@ -38,13 +38,13 @@ workbox.routing.registerRoute(
   'https://trans-pwa.herokuapp.com/createTrans',
    new workbox.strategies.networkFirst(),
   'POST'
-)
+);
 
 workbox.routing.registerRoute(
   'https://trans-pwa.herokuapp.com/api/push_message',
   workbox.strategies.networkFirst(),
   'POST'
-)
+);
 
 self.addEventListener('push', function (event) {
   const data = event.data.json();
