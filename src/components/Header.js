@@ -23,30 +23,30 @@ export default class HeaderInclude extends Component {
     return (
       <React.Fragment>
 
-        <button type="button" id="sidebarCollapse" class="btn main-background btn-toggle">
-          <i class="fas fa-align-left"></i>
+        <button type="button" id="sidebarCollapse" className="btn main-background btn-toggle">
+          <i className="fas fa-align-left"></i>
         </button>
         <nav id="sidebar">
           <div id="dismiss">
-            <i class="fas fa-arrow-left"></i>
+            <i className="fas fa-arrow-left"></i>
           </div>
 
-          <div class="sidebar-header">
+          <div className="sidebar-header">
             <h3>Football transfer app</h3>
           </div>
 
-          <ul class="list-unstyled components">
+          <ul className="list-unstyled components">
             <li>
-              <a href="/"><i class="fas fa-home icon-nav"></i>Home</a>
+              <a href="/"><i className="fas fa-home icon-nav"></i>Home</a>
             </li>
             <li>
-              <a href="/transfers"><i class="fas fa-newspaper icon-nav"></i>Transfers</a>
+              <a href="/transfers"><i className="fas fa-newspaper icon-nav"></i>Transfers</a>
             </li>
           </ul>
 
-          <ul class="list-unstyled CTAs">
+          <ul className="list-unstyled CTAs">
             <li>
-              <a onClick={this.logout} href="/" class="download">Logout</a>
+              <a onClick={this.logout} href="/" className="download">Logout</a>
             </li>
           </ul>
         </nav>

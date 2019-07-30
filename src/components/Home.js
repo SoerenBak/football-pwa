@@ -8,8 +8,8 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: "HEJ",
-            date: "DAV",
+            text: "Transfer",
+            date: "12-12-2012",
             news: [],
             status: ""
         }
@@ -89,7 +89,7 @@ export default class Home extends Component {
                                                             <h2>Notifications</h2> 
                                                                 <p>To get notifications you need to <i>turn on and allow notifications.</i></p>      
                                                                 <a href="/transfers" ><button className="btn btn-danger center-block">Go to Transfers</button></a>
-                                                            
+                                                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png" width="100px" height="auto" ></img>
                                                 </div>
                                             </div>
                                         </div>
@@ -101,7 +101,7 @@ export default class Home extends Component {
                         <Route exact path={"/Transfers"}
                             render={(props) =>
                                 <React.Fragment>  
-                        <div class="wrapper">
+                        <div className="wrapper">
                             <div id="content">                           
                                 <News {...props} news={this.state.news} />    
                                 <CreateNews {...props} addNews={this.addNews}></CreateNews>                         

@@ -7,8 +7,8 @@ class News extends Component {
     this.props.news.forEach(elm => {
       transList.push(<React.Fragment>
         <article>
-          <div class="col-lg-12">
-            <div class="card">
+          <div className="col-lg-12">
+            <div className="card">
               <h4>{elm.text}</h4>
               <p>{elm.date}</p>
             </div>
@@ -21,8 +21,8 @@ class News extends Component {
     return (
       <React.Fragment>
             <Header></Header>
-            <div class="container"> 
-              <div class="col-lg-12"> 
+            <div className="container"> 
+              <div className="col-lg-12"> 
                   <h1>TRANSFER NEWS</h1>
               </div>
                  {transList}
