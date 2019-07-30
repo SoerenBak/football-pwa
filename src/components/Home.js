@@ -78,7 +78,7 @@ export default class Home extends Component {
                                     <div className="wrapper">
                                         <div id="content">
                                             <Header></Header>                                            
-                                            <div className="col-ld-12 ">
+                                            <div className="col-ld-12">
                                                 <div className="container">
                                                     <div className="card">
                                                         <h1>Football Transfer News</h1>
@@ -88,8 +88,7 @@ export default class Home extends Component {
                                                                 <p>This site makes it possible to get notifications when a transfer happens.<br></br>The PWA is downloadable.<br></br>It is possible to use the site offline.</p>
                                                             <h2>Notifications</h2> 
                                                                 <p>To get notifications you need to <i>turn on and allow notifications.</i></p>      
-                                                                <a href="/transfers" ><button className="btn btn-danger center-block">Go to Transfers</button></a>
-                                                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png" width="100px" height="auto" ></img>
+                                                                <a href="/transfers" ><button className="btn btn-danger center-block">Go to Transfers</button></a>                                                             
                                                 </div>
                                             </div>
                                         </div>

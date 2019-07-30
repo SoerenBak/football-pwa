@@ -48,6 +48,20 @@ export default class HeaderInclude extends Component {
             <li>
               <a onClick={this.logout} href="/" className="download">Logout</a>
             </li>
+            <li className="text-center">
+              <img src="./images/site/logo.png" className="logo"></img>
+            </li>
+            <li className="text-center">
+              <img src="./images/site/adidas.png" className="logo-adidas"></img>
+            </li>
+            <li className="text-center">
+              <img src="./images/site/fly.png" className="logo-fly"></img>
+            </li>
+            <li className="official"> 
+              <a href="www.arsenal.com" className="">www.arsenal.com</a>
+            </li>
+
+
           </ul>
         </nav>
       </React.Fragment>
