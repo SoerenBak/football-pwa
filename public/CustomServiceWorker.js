@@ -30,7 +30,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  'https://trans-pwa.herokuapp.com//transfers',
+  'https://trans-pwa.herokuapp.com/transfers',
   new workbox.strategies.NetworkFirst()
 );
 
