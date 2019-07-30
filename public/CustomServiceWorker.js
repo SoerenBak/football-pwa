@@ -1,4 +1,4 @@
-console.log("Custom Service Worker!§!#!");
+console.log("Custom Service Worker!");
 
 self.addEventListener('install', event => {
     console.log('The service worker is being installed.');

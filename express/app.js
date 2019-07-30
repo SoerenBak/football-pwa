@@ -133,7 +133,7 @@ app.post('/api/subscribe', (req, res) => { // Store subscription on server
 app.post('/api/push_message', (req, res, next) => {
     let text = req.body.text;
     let date = req.body.date;
-    let img = './images/site/adidas.png'
+    let img = './images/site/logo.png'
 
     Subscriptions.find({}, (err, sub) => {
         if (err) {
@@ -143,7 +143,7 @@ app.post('/api/push_message', (req, res, next) => {
             const payload = JSON.stringify({
                 msg: date,
                 text: text,
-                text: img
+                img: img
             });
 
             webpush.sendNotification(elm, payload).catch(error => {
