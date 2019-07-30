@@ -1,4 +1,4 @@
-console.log("Custom Service Worker !");
+console.log("Custom Service Worker§!");
 
 self.addEventListener('install', event => {
     console.log('The service worker is being installed.');
@@ -34,15 +34,14 @@ workbox.routing.registerRoute('https://trans-pwa.herokuapp.com/transfers',
   'GET'
 );
 
-workbox.routing.registerRoute(
-  'https://trans-pwa.herokuapp.com/createTrans',
-   new workbox.strategies.networkFirst(),
+workbox.routing.registerRoute('https://trans-pwa.herokuapp.com/createTrans',
+   new workbox.strategies.NetworkFirst(),
   'POST'
 );
 
 workbox.routing.registerRoute(
   'https://trans-pwa.herokuapp.com/api/push_message',
-  workbox.strategies.networkFirst(),
+  new workbox.strategies.networkFirst(),
   'POST'
 );
 
