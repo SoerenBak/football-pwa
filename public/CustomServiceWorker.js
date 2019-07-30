@@ -24,14 +24,14 @@ workbox.routing.registerRoute(
   }),
 ); 
 
-workbox.routing.registerRoute(
-  'https://trans-pwa.herokuapp.com/',
-  new workbox.strategies.NetworkFirst()
+workbox.routing.registerRoute('https://trans-pwa.herokuapp.com/',
+  new workbox.strategies.NetworkFirst(),
+  'GET'
 );
 
-workbox.routing.registerRoute(
-  'https://trans-pwa.herokuapp.com/transfers',
-  new workbox.strategies.NetworkFirst()
+workbox.routing.registerRoute('https://trans-pwa.herokuapp.com/transfers',
+  new workbox.strategies.NetworkFirst(),
+  'GET'
 );
 
 workbox.routing.registerRoute(
