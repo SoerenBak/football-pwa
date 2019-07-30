@@ -35,11 +35,6 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  'https://trans-pwa.herokuapp.com/getTrans',
-   new workbox.strategies.networkFirst()
-)
-
-workbox.routing.registerRoute(
   'https://trans-pwa.herokuapp.com/createTrans',
    new workbox.strategies.networkFirst({
   }),
