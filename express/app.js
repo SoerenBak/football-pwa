@@ -141,7 +141,8 @@ app.post('/api/push_message', (req, res, next) => {
         sub.forEach((elm) => {
             const payload = JSON.stringify({
                 msg: date,
-                text: text
+                text: text,
+                icon: 'https://www.lamar.edu/admissions/_files/images/arrows-transfer.png'
             });
 
             webpush.sendNotification(elm, payload).catch(error => {
