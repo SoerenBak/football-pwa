@@ -58,7 +58,7 @@ self.addEventListener('push', function (event) {
       self.registration.showNotification(data.text, {
           body: data.msg,
           vibrate: [500, 100, 500],
-          icon: 'public\images\site\arrow-logo.png'
+          icon: 'images\site\arrow-logo.png'
       })   
   );
 });
