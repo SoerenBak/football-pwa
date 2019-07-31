@@ -1,12 +1,11 @@
 {
-  "name": "Football Transfers App",
-  "short_name": "Trans App",
+  "name": "FootballTransfer app",
+  "short_name": "Transfer app",
   "theme_color": "#db0007",
-  "background_color": "#063672",
+  "background_color": "#ffffff",
   "display": "standalone",
-  "orientation": "portrait",
   "Scope": "/",
-  "start_url": "/",
+  "start_url": "https://trans-pwa.herokuapp.com",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
