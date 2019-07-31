@@ -58,7 +58,7 @@ self.addEventListener('push', function (event) {
       self.registration.showNotification(data.text, {
           body: data.msg,
           vibrate: [500, 100, 500],
-          icon: 'images\site\arrow-logo.png'
+          icon: 'https://vectr.com/tmp/a3z24jmieI/a1vkZ86mG.png?width=126&height=125&select=a1vkZ86mGpage0'
       })   
   );
 });
