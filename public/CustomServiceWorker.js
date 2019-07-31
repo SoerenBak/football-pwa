@@ -1,4 +1,4 @@
-console.log("Custom Service Worker!");
+console.log("Custom Service Worker!!");
 
 self.addEventListener('install', event => {
     console.log('The service worker is being installed.');
@@ -57,7 +57,8 @@ self.addEventListener('push', function (event) {
   event.waitUntil(
       self.registration.showNotification(data.text, {
           body: data.msg,
-          vibrate: [500, 100, 500]
+          vibrate: [500, 100, 500],
+          icon: 'https://www.lamar.edu/admissions/_files/images/arrows-transfer.png'
       })
   );
 });
