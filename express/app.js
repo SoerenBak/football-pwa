@@ -83,7 +83,7 @@ app.get("/getTrans", (req, res) => {
         if (err) {
             console.log(err)
         }
-        res.send(transfers
+        res.send(transfers)
     })
 })
 
