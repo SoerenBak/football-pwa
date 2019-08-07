@@ -48,8 +48,8 @@ export default class NewTransfer extends Component {
                 </div>
 
                 <div className="form-group col-lg-12">
-                <label>Date</label>
-                  <input type="text" onChange={this.onChangeDate} className="form-control" id="date" placeholder="Enter date here..."></input>
+                <label for="example-date-input">Date</label>
+                <input class="form-control" onChange={this.onChangeDate} type="date" id="example-date-input"></input>
                 </div>
 
                 <button onClick={this.handleTransfersInput}
