@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class NewQuestion extends Component {
+export default class NewTransfer extends Component {
 
   constructor(props) {
     super(props);
@@ -10,7 +10,7 @@ export default class NewQuestion extends Component {
       date: ""
     }
 
-    this.handleNewsInput = this.handleNewsInput.bind(this);
+    this.handleTransfersInput = this.handleTransfersInput.bind(this);
     this.onChangeText = this.onChangeText.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
   }
@@ -27,9 +27,9 @@ export default class NewQuestion extends Component {
     })
   }
 
-  handleNewsInput(event) {
+  handleTransfersInput(event) {
     event.preventDefault()
-    this.props.addNews(this.state.date, this.state.text);
+    this.props.addTransfers(this.state.date, this.state.text);
   }
 
 
@@ -52,7 +52,7 @@ export default class NewQuestion extends Component {
                   <input type="text" onChange={this.onChangeDate} className="form-control" id="date" placeholder="Enter date here..."></input>
                 </div>
 
-                <button onClick={this.handleNewsInput}
+                <button onClick={this.handleTransfersInput}
                   type="submit" id="submitButton" className="btn btn-danger"> Create Transfer
                 </button>
 

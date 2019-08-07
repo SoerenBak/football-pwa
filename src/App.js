@@ -10,7 +10,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            HomeButtonNews: <button> TRANSFERS </button>,
+            HomeButtonTransfers: <button> TRANSFERS </button>,
             user: null,
             text: "Transfer",
             date: "12-12-2012",

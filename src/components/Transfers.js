@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Header from './Header';
-class News extends Component {
+class Transfers extends Component {
 
   render() {
     let transList = []
-    this.props.news.forEach(elm => {
+    this.props.transfers.forEach(elm => {
       transList.push(<React.Fragment>
         <article>
           <div className="col-lg-12">
@@ -33,4 +33,4 @@ class News extends Component {
   }
 }
 
-export default News;
+export default Transfers;

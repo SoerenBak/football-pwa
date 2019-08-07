@@ -44,12 +44,12 @@ mongoose.connect(process.env.dbUrl, (err) => {
 
 var Schema = mongoose.Schema;
 
-var New = new Schema({
+var Transfer = new Schema({
     text: String,
     date: String
 })
 
-var News = mongoose.model("New", New)
+var Transfers = mongoose.model("Transfer", Transfer)
 
 var Sub = new Schema({
     endpoint: String,
@@ -69,7 +69,6 @@ var User = new Schema({
 
 var Users = mongoose.model("User", User)
 
-//Find all subs
 app.get('/subs', (req, res) => {
     Subscriptions.find({}, (err, subs) => {
         if (err) {
@@ -79,25 +78,23 @@ app.get('/subs', (req, res) => {
     })
 })
 
-//Find transfers
 app.get("/getTrans", (req, res) => {
-    News.find({}, (err, news) => {
+    Transfers.find({}, (err, transfers) => {
         if (err) {
             console.log(err)
         }
-        res.send(news)
+        res.send(transfers
     })
 })
 
-//Add a Transfer
 app.post("/createTrans", (req, res) => {
-    var news = new News(req.body)
-    news.save(function (err, news) {
+    var transfers = new Transfers(req.body)
+    transfers.save(function (err, transfers) {
         if (err) {
             console.log(err)
             return res.status(500).send();
         }
-        res.json(201, news)
+        res.json(201, transfers)
     })
 })
 

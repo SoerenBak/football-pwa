@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import News from "./News.js";
+import Transfers from "./Transfers.js";
 import Header from "./Header.js";
-import CreateNews from "./CreateNews.js";
+import CreateTransfers from "./CreateTransfers.js";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 export default class Home extends Component {
@@ -10,7 +10,7 @@ export default class Home extends Component {
         this.state = {
             text: "Transfer",
             date: "12-12-2012",
-            news: [],
+            transfers: [],
             status: ""
         }
         this.sendNoti = this.sendNoti.bind(this);
@@ -25,11 +25,11 @@ export default class Home extends Component {
     componentDidMount() {
         fetch('https://trans-pwa.herokuapp.com/getTrans')
             .then(response => response.json())
-            .then(data => this.setState({ news: data }))
+            .then(data => this.setState({ transfers: data }))
     }
 
  
-    addNews(date, text ) {
+    addTransfers(date, text ) {
     fetch('https://trans-pwa.herokuapp.com/createTrans', {
         method: 'POST',
         body: JSON.stringify({
@@ -102,8 +102,8 @@ export default class Home extends Component {
                                 <React.Fragment>  
                         <div className="wrapper">
                             <div id="content">                           
-                                <News {...props} news={this.state.news} />    
-                                <CreateNews {...props} addNews={this.addNews}></CreateNews>                         
+                                <Transfers {...props} transfers={this.state.transfers} />    
+                                <CreateTransfers {...props} addTransfers={this.addTransfers}></CreateTransfers>                         
                             </div>
                         </div>                                     
                             </React.Fragment>      
