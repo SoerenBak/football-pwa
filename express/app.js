@@ -46,7 +46,10 @@ var Schema = mongoose.Schema;
 
 var Transfer = new Schema({
     text: String,
-    date: String
+    date: {
+        type: Date,
+        default: Date.now
+    }
 })
 
 var Transfers = mongoose.model("Transfer", Transfer)
