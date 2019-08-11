@@ -12,7 +12,6 @@ export default class NewTransfer extends Component {
 
     this.handleTransfersInput = this.handleTransfersInput.bind(this);
     this.onChangeText = this.onChangeText.bind(this);
-    this.onChangeDate = this.onChangeDate.bind(this);
   }
 
   onChangeText(event) {
@@ -21,15 +20,9 @@ export default class NewTransfer extends Component {
     })
   }
 
-  onChangeDate(event) {
-    this.setState({
-      date: event.target.value
-    })
-  }
-
   handleTransfersInput(event) {
     event.preventDefault()
-    this.props.addTransfers(this.state.date, this.state.text);
+    this.props.addTransfers(this.state.date = Date.now, this.state.text);
   }
 
 
@@ -45,11 +38,6 @@ export default class NewTransfer extends Component {
 
                 <label>Text</label>
                   <input type="text" onChange={this.onChangeText} className="form-control" id="text" placeholder="Enter text here..."></input>
-                </div>
-
-                <div className="form-group col-lg-12">
-                <label for="example-date-input">Date</label>
-                <input class="form-control" onChange={this.onChangeDate} type="date" id="example-date-input"></input>
                 </div>
 
                 <button onClick={this.handleTransfersInput}
