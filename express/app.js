@@ -18,7 +18,7 @@ app.use(morgan('combined')); // Log all requests to console
 const publicVapidKey = process.env.PUBLIC_VAPID_KEY;
 const privateVapidKey = process.env.PRIVATE_VAPID_KEY;
 
-webpush.setVapidDetails('mailto:soren@sbpweb.dk', publicVapidKey, privateVapidKey);
+webpush.setVapidDetails('mailto:eaasbp@students.eaaa.dk', publicVapidKey, privateVapidKey);
 const subscriptions = []; 
 app.use(express.static(path.join(__dirname, '../build')));
 
@@ -48,7 +48,7 @@ var Transfer = new Schema({
     text: String,
     date: {
         type: Date,
-        default: () => Date.now() + 2*60*60*1000 // GMT+2
+        default: Date.now
     }
 })
 
@@ -132,6 +132,7 @@ app.post('/api/subscribe', (req, res) => { // Store subscription on server
 
 app.post('/api/push_message', (req, res, next) => {
     let text = req.body.text;
+    let date = req.body.date;
 
     Subscriptions.find({}, (err, sub) => {
         if (err) {
@@ -139,7 +140,8 @@ app.post('/api/push_message', (req, res, next) => {
         }
         sub.forEach((elm) => {
             const payload = JSON.stringify({
-                text: text
+                msg: date,
+                text: text,
             });
 
             webpush.sendNotification(elm, payload).catch(error => {

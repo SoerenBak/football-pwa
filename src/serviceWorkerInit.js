@@ -13,8 +13,6 @@ export function register() {
     }
 }
 
-///http://localhost:9090/api/push_message
-
 function subscribeToPush() {
     navigator.serviceWorker.ready.then(
         function (serviceWorkerRegistration) {
@@ -28,7 +26,7 @@ function subscribeToPush() {
             console.log(sub)
             serviceWorkerRegistration.pushManager.subscribe(options).then(
                 function (pushSubscription) {
-                    fetch('http://localhost:9090/api/subscribe', {
+                    fetch('https://trans-pwa.herokuapp.com/api/subscribe', {
                         method: 'post',
                         headers: {
                             'Content-type': 'application/json'
