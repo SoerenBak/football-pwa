@@ -210,3 +210,13 @@ input {
 .logo-home {
   width: 50%;
 }
+
+.connection {
+  color: indianred;
+  text-decoration: underline;
+  margin-bottom: 12px;
+}
+
+.connection-text {
+  color: indianred;
+}

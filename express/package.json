@@ -1,5 +1,5 @@
 {
-  "name": "transfer_notification_api",
+  "name": "transfer_notification_api_v2",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {

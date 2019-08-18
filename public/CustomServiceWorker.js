@@ -1,62 +1,66 @@
-console.log("Custom Service Worker!!");
+const cacheName = 'trans-v1';
 
-self.addEventListener('install', event => {
-    console.log('The service worker is being installed.');
+const cacheAssets = [
+  'index.html',
+  'style3.css',
+  'CustomServiceWorker.js'
+]
+
+const cacheImages = [
+  '/images/site/adidas.png',
+  '/images/icons/icon-144x144.png',
+  '/images/site/arrow-logo.png',
+  '/images/site/fly.png',
+  '/images/site/logo.png'
+]
+
+self.addEventListener('install', e => {
+  console.log('Service Worker: Installed');
+    e.waitUntil(
+      caches
+        .open(cacheName)
+        .then(cache => {
+          console.log('Service Worker: Caching Files');
+          cache.addAll(cacheAssets);
+          cache.addAll(cacheImages);
+        })
+        .then(() => self.skipWaiting())
+    );
 });
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
+self.addEventListener('activated', e => {
+  console.log('Service Worker: Activated');
+    e.waitUntil(
+      caches.keys().then(cacheNames => {
+        return Promise.all(
+          cacheNames.map(cache => {
+            if(cache !== cacheName) {
+              console.log('Service Worker: Clearing Old Cache');
+              return caches.delete(cache);
+            }
+          })
+        )
+      })
+    )
+});
 
-if (workbox) {
-  console.log(`Yay! Workbox is loaded 🎉`);
-} else {
-  console.log(`Boo! Workbox didn't load 😬`);
-}
+self.addEventListener('fetch', e => {
+  console.log('Service Worker: Fetching');
+  e.respondWith(
+    fetch(e.request).catch(() => caches.match(e.request))
+  )
+})
 
-workbox.routing.registerRoute(
-  /\.(?:js|css|html)$/,
-  new workbox.strategies.NetworkFirst()
-);
 
-workbox.routing.registerRoute(
-  /\.(?:png|gif|jpg|jpeg|svg)$/,
-  new workbox.strategies.NetworkFirst({
-    cacheName: 'images',
-  }),
-); 
-
-workbox.routing.registerRoute('https://trans-pwa.herokuapp.com/',
-  new workbox.strategies.NetworkFirst(),
-  'GET'
-);
-
-workbox.routing.registerRoute('https://trans-pwa.herokuapp.com/transfers',
-  new workbox.strategies.NetworkFirst(),
-  'GET'
-);
-
-workbox.routing.registerRoute('https://trans-pwa.herokuapp.com/getTrans',
-  new workbox.strategies.NetworkFirst(),
-  'GET'
-);
-
-/*
-workbox.routing.registerRoute('https://trans-pwa.herokuapp.com/createTrans',
-   new workbox.strategies.NetworkFirst(),
-  'POST'
-);
-*/
-
-workbox.routing.registerRoute('https://trans-pwa.herokuapp.com/api/push_message',
-  new workbox.strategies.NetworkFirst(),
-  'POST'
-);
+/////////////////////////////////////////////////////////////////////////
 
 self.addEventListener('push', function (event) {
   const data = event.data.json();
   console.log("Getting push data", data);
   event.waitUntil(
       self.registration.showNotification(data.text, {
-          body: data.msg,
+          title: data.msg,
+          body: 'Arsenal Transfer: Just now',
           vibrate: [500, 100, 500],
           icon: 'https://vectr.com/tmp/a3z24jmieI/a1vkZ86mG.png?width=126&height=125&select=a1vkZ86mGpage0'
       })   

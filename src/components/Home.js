@@ -3,6 +3,7 @@ import Transfers from "./Transfers.js";
 import Header from "./Header.js";
 import CreateTransfers from "./CreateTransfers.js";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Offline, Online } from "react-detect-offline";
 
 export default class Home extends Component {
     constructor(props) {
@@ -23,14 +24,14 @@ export default class Home extends Component {
     
 
     componentDidMount() {
-        fetch('https://trans-pwa.herokuapp.com/getTrans')
+        fetch('http://localhost:9090/getTrans')
             .then(response => response.json())
             .then(data => this.setState({ transfers: data }))
     }
 
  
     addTransfers(date, text ) {
-    fetch('https://trans-pwa.herokuapp.com/createTrans', {
+    fetch('http://localhost:9090/createTrans', {
         method: 'POST',
         body: JSON.stringify({
             text: text,
@@ -40,28 +41,26 @@ export default class Home extends Component {
           "Content-type": "application/json; charset=UTF-8"
         }
       })
-      fetch('https://trans-pwa.herokuapp.com/api/push_message', {
+      fetch('http://localhost:9090/api/push_message', {
             method: 'post',
             headers: {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify({
-                text: text,
-                date: date
+                text: text
             }),
         }).catch(error => console.error(error));
 
     }
 
-    sendNoti(text, date) {
-        fetch('https://trans-pwa.herokuapp.com/api/push_message', {
+    sendNoti(text) {
+        fetch('http://localhost:9090/api/push_message', {
             method: 'post',
             headers: {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify({
                 text: text,
-                date: date
             }),
         }).catch(error => console.error(error));
     }
@@ -81,6 +80,10 @@ export default class Home extends Component {
                                             <div className="col-ld-12">
                                                 <div className="container">
                                                     <div className="card">
+                                                    <div>
+                                                        <Online></Online>
+                                                        <Offline><h3 className="connection">Your connection status is currently offline</h3></Offline>
+                                                    </div>   
                                                         <h1>Football Transfer News</h1>
                                                             <h2>Mainly News from Arsenal FC.</h2>
                                                             <br></br>
@@ -88,10 +91,10 @@ export default class Home extends Component {
                                                                 <p>This site makes it possible to get notifications when a transfer happens.<br></br>The PWA is downloadable.<br></br>It is possible to use the site offline.</p>
                                                             <h2>Notifications</h2> 
                                                                 <p>To get notifications you need to <i>turn on and allow notifications.</i></p>      
-                                                                <a href="/transfers" ><button className="btn btn-danger center-block">Go to Transfers</button></a>                                                             
+                                                                <a href="/transfers" ><button className="btn btn-danger center-block">Go to Transfers</button></a>                                                                                                                                                                                      
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>                                       
                                     </div>
                                     </div>
                                 </React.Fragment>

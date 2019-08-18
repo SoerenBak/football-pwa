@@ -30,10 +30,10 @@ export default class NewTransfer extends Component {
     return (
       <React.Fragment>
 
-        <div class="container">
-            <div class="col-lg-12">
-              <form class="custom-form">
-                <h2 class="center">New Transfer</h2>
+        <div className="container">
+            <div className="col-lg-12">
+              <form className="custom-form">
+                <h2 className="center">New Transfer</h2>
                 <div className="form-group col-lg-12">
 
                 <label>Text</label>
